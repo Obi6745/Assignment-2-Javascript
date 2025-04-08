@@ -37,8 +37,67 @@ class Smoothie {
     //Calculate the total price
     calculatePrice() {
         let total= 0; 
+    //add base price 
+        total+= this.prices.base[this.base]; 
+    //add fruit price
+        this.fruits.forEach(fruit => {
+            total += this.prices.fruits[fruit];
+        })
+    //add addons price
+    this.addons.forEach(addon => {
+        total += this.prices.addons[addon];
+    });
 
-        total+=
+    //multiply by size multiplier 
+    total *= this.prices.size[this.size];
 
+    return total.toFixed(2); 
+    }
+
+    //generale a description of the smoothie 
+    getDescription() {
+        const sizeText = {
+            small: '12oz',
+            medium: '16oz', 
+            large: '20oz'
+        };
+
+        let let description = `A ${sizeText[this.size]} smoothie with ${this.base.replace('_', ' ')} as the base.`;
+        if (this.fruits.length > 0) {
+            description += `\nFruits: ${this.fruits.join(', ')}.`;
+    
+        }
+        if (this.addons.length > 0) {
+            description += `\nAdd-ons: ${this.addons.join(', ')}.`;
+        }
+        return description;
+    }
+
+    //get a color based on the fruits selected 
+    getColor() {
+        const fruitColors = {
+            banana: 'FFD700',
+            strawberry: '#FF4444',
+            blueberry: '4444FF', 
+            mango: '#FFA500', 
+            pineapple: '#FFD700'
+
+        };
+
+        if (this.fruits.length ===0) return '#FFFFFF'
+
+        //mix the colors of selected fruits 
+        let r = 0, g = 0, b= 0;
+        this.fruits.forEach(fruit => {
+            const color =fruitColors [fruit];
+            r += parseInt(color.substr(1,2), 16); 
+            g += parseInt(color.substr(3,2), 16);
+            b += paseInt (color.substr(5,2), 16); 
+
+        }); 
+
+        const count = this.fruits.length; 
+        return `rgb(${Math.round(r/count)}, ${Math.round(g/count)}, ${Math.round(b/count)})`;
     }
 }
+
