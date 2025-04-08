@@ -101,3 +101,13 @@ class Smoothie {
     }
 }
 
+//Handle form submission 
+document.getElementById('smoothieForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    //get form values 
+    const base = document.getElementById('base').value;
+    const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked')).map(cb => cb.value);
+    const addons = Array.from(document.querySelectorAll) ('input[name="addons"]:checked')).map(cb => cb.value);
+    const size = document.querySelector('input[name=')
+}
