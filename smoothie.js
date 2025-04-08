@@ -110,4 +110,55 @@ document.getElementById('smoothieForm').addEventListener('submit', function (e) 
     const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked')).map(cb => cb.value);
     const addons = Array.from(document.querySelectorAll) ('input[name="addons"]:checked')).map(cb => cb.value);
     const size = document.querySelector('input[name="size"]:checked').value;
-}
+
+    //Create smoothie object 
+    const smoothie = new Smoothie(base, fruits, addons, size); 
+
+    //display smoothie information 
+    const output = document.getElementById('smoothieOutput'); 
+    const description = document.getElementById('smoothieDescription'); 
+    const price = document.getElementById('smoothiePrice'); 
+    const image = document.getElementById('smoothieImage'); 
+
+    description.textcontent = smoothie.getDescription(); 
+    price.textContent = `Total Price : $${smoothie.calculatePrice()}`;
+
+    //create visuals 
+
+    image.innerHTML = `
+    <div style="
+    width: 200px; 
+    height: 300px; 
+    margin: 0 auto; 
+    background: ${smoothie.getColor()}; 
+    border-radius: 20px; 
+    position: relative; 
+    box-shadow 0 4px 8px rgba(0,0,0,0.1); 
+    "> 
+        <div style=" 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-size: 24px; 
+            color: white; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+            ">🍹</div>
+        </div>
+    `;
+
+    output.classList.remove('hidden');
+}); 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    `
+
+
