@@ -33,6 +33,34 @@
         </div>
     </div>
 
+    <div class="form-section">
+        <h2>Add-ons</h2>
+        <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="addons" value="protein"> Protein Powder ($2.00)</label>
+        <label><input type="checkbox" name="addons" value="honey"> Honey ($0.50)</label>
+        <label><input type="checkbox" name="addons" value="chia"> Chia Seeds ($1.00)</label>
+        <label><input type="checkbox" name="addons" value="spinach"> Spinach ($0.75)</label>
+    </div>
+
+    <div class="form-section">
+        <h2>Size</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="size" value="small"> required> Small (12oz)</label>
+            <label><input type="radio" name="size" value="medium"> required> Medium (16oz)</label>
+            <label><input type="radio" name="size" value="small"> required> Large (20oz)</label>
+        </div>
+    </div>
+
+    <button type="submit" class="order-btn">Create My Smoothie!</button>
+
+    <div id="smoothieOutput" class="hidden">
+        <h2>Your Smoothie Order</h2>
+        <div id="smoothieDescription"></div>
+        <div id="smoothiePrice"></div>
+        <div id="smoothieImage"></div>
+
+    </div>\
+    <script src="smoothis.js"></script>
 
 
 
