@@ -109,5 +109,5 @@ document.getElementById('smoothieForm').addEventListener('submit', function (e) 
     const base = document.getElementById('base').value;
     const fruits = Array.from(document.querySelectorAll('input[name="fruits"]:checked')).map(cb => cb.value);
     const addons = Array.from(document.querySelectorAll) ('input[name="addons"]:checked')).map(cb => cb.value);
-    const size = document.querySelector('input[name=')
+    const size = document.querySelector('input[name="size"]:checked').value;
 }
